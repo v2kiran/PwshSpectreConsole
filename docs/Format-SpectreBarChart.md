@@ -1,7 +1,7 @@
 ---
 external help file: PwshSpectreConsole-help.xml
 Module Name: PwshSpectreConsole
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
-{{ Fill in the Synopsis }}
+Create a console bar chart
 
 ## SYNTAX
 
@@ -21,14 +21,37 @@ Format-SpectreBarChart [[-Data <Array>]] [[-Title <Object>]] [[-Width <Object>]]
 
 ## DESCRIPTION
 
-{{ Fill in the Description }}
+Create a console bar chart
 
 ## EXAMPLES
 
 ### Example 1: Example 1
 
 ```
-PS C:\> {{ Add example code here }}
+PS C:\>
+ $data = @(
+     @{
+         Label = "Apple"
+         Value = 12
+         Color = 'Green'
+     },
+     @{
+         Label = "Orange"
+         Value = 54
+         Color = 'Orange1'
+     },
+     @{
+         Label = "Strawberry"
+         Value = 51
+         Color = 'Red'
+     },
+     @{
+         Label = "Banana"
+         Value = 33
+         Color = 'purple'
+     }
+ )
+$data | Format-SpectreBarChart -Title "the bar chart" -Width 35
 ```
 
 {{ Add example description here }}
@@ -42,12 +65,12 @@ PS C:\> {{ Add example code here }}
 ```yaml
 Type: Array
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: 0
-Default value: 
+Default value:
 Accept pipeline input: True
 Accept wildcard characters: False
 DontShow: False
@@ -60,12 +83,12 @@ DontShow: False
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: 1
-Default value: 
+Default value:
 Accept pipeline input: False
 Accept wildcard characters: False
 DontShow: False
@@ -78,12 +101,12 @@ DontShow: False
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: 2
-Default value: 
+Default value:
 Accept pipeline input: False
 Accept wildcard characters: False
 DontShow: False
@@ -99,16 +122,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### None
 
 
-## OUTPUTS
+
+## OUTPUTS
 
 ### System.Object
 
 
-## NOTES
+
+## NOTES
 
 {{ Fill in the Notes }}
 
 ## RELATED LINKS
 
 Fill Related Links Here
-

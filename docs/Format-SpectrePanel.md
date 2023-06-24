@@ -1,7 +1,7 @@
 ---
 external help file: PwshSpectreConsole-help.xml
 Module Name: PwshSpectreConsole
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -28,7 +28,17 @@ Format-SpectrePanel [[-Data <String>]] [[-Title <String>]] [[-Align <String>]] [
 ### Example 1: Example 1
 
 ```
-PS C:\> {{ Add example code here }}
+PS C:\>
+$message = "Hi $name, nice to meet you :waving_hand:`n"
+$message += "Your favourite food is $food :fork_and_knife:`n"
+$message += "And your favourite colors are:`n"
+$colors = 'yellow','green','purple'
+foreach($color in $colors)
+{
+    $message += " - [$color]$color[/]`n"
+}
+$message += "Nice! :rainbow:"
+$message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1
 ```
 
 {{ Add example description here }}
@@ -42,12 +52,12 @@ PS C:\> {{ Add example code here }}
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: 2
-Default value: 
+Default value:
 Accept pipeline input: False
 Accept wildcard characters: False
 DontShow: False
@@ -60,12 +70,12 @@ DontShow: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: 3
-Default value: 
+Default value:
 Accept pipeline input: False
 Accept wildcard characters: False
 DontShow: False
@@ -78,12 +88,12 @@ DontShow: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: 4
-Default value: 
+Default value:
 Accept pipeline input: False
 Accept wildcard characters: False
 DontShow: False
@@ -96,12 +106,12 @@ DontShow: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: 0
-Default value: 
+Default value:
 Accept pipeline input: True
 Accept wildcard characters: False
 DontShow: False
@@ -114,12 +124,12 @@ DontShow: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: Named
-Default value: 
+Default value:
 Accept pipeline input: False
 Accept wildcard characters: False
 DontShow: False
@@ -132,12 +142,12 @@ DontShow: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
-Accepted values: 
+Aliases:
+Accepted values:
 
 Required: True (None) False (All)
 Position: 1
-Default value: 
+Default value:
 Accept pipeline input: False
 Accept wildcard characters: False
 DontShow: False
@@ -153,16 +163,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### None
 
 
-## OUTPUTS
+
+## OUTPUTS
 
 ### System.Object
 
 
-## NOTES
+
+## NOTES
 
 {{ Fill in the Notes }}
 
 ## RELATED LINKS
 
 Fill Related Links Here
-
