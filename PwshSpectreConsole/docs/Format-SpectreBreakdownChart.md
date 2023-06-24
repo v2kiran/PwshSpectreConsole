@@ -8,7 +8,7 @@ schema: 2.0.0
 # Format-SpectreBreakdownChart
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Create a console breakdown chart
 
 ## SYNTAX
 
@@ -17,21 +17,43 @@ Format-SpectreBreakdownChart [[-Data] <Array>] [[-Width] <Object>] [<CommonParam
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Create a console breakdown chart
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\>
+$Data = @(
+     @{
+         Label = "Apple"
+         Value = 12
+         Color = 'Green'
+     },
+     @{
+         Label = "Strawberry"
+         Value = 15
+         Color = 'Red'
+     },
+     @{
+         Label = "Orange"
+         Value = 54
+         Color = 'Orange1'
+     },
+     @{
+         Label = "Plum"
+         Value = 75
+         Color = 'Fuchsia'
+     }
+ )
+ $Data | Format-SpectreBreakdownChart -Width 75
 ```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Data
-{{ Fill Data Description }}
+The data for the bar chart in the formof an array of hashtables
+
 
 ```yaml
 Type: Array
@@ -46,7 +68,9 @@ Accept wildcard characters: False
 ```
 
 ### -Width
-{{ Fill Width Description }}
+optional
+By default the chart will span the width of your current console but you may set it to a custom value.
+
 
 ```yaml
 Type: Object

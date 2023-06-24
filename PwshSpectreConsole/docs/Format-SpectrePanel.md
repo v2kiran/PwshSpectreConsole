@@ -8,7 +8,7 @@ schema: 2.0.0
 # Format-SpectrePanel
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Create a console panel
 
 ## SYNTAX
 
@@ -18,21 +18,32 @@ Format-SpectrePanel [[-Data] <String>] [[-Title] <String>] [[-Align] <String>] [
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Create a console panel
+
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\>
+$message = "Hi $name, nice to meet you :waving_hand:`n"
+$message += "Your favourite food is $food :fork_and_knife:`n"
+$message += "And your favourite colors are:`n"
+$colors = 'yellow','green','purple'
+foreach($color in $colors)
+{
+    $message += " - [$color]$color[/]`n"
+}
+$message += "Nice! :rainbow:"
+$message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1
 ```
 
-{{ Add example description here }}
+for emojis check here: https://spectreconsole.net/appendix/emojis
 
 ## PARAMETERS
 
 ### -Align
-{{ Fill Align Description }}
+Alignment for the panel title. centered by default.
 
 ```yaml
 Type: String
@@ -48,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -Border
-{{ Fill Border Description }}
+Border style for the panel
 
 ```yaml
 Type: String
@@ -63,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -Color
-{{ Fill Color Description }}
+Color of the panel border
 
 ```yaml
 Type: String
@@ -78,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -Data
-{{ Fill Data Description }}
+Data inside the panel
 
 ```yaml
 Type: String
@@ -93,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -Expand
-{{ Fill Expand Description }}
+Toggle that controls whether the panel expands to the full width of the current console or not.
 
 ```yaml
 Type: SwitchParameter
@@ -108,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-{{ Fill Title Description }}
+Optional Title of the panel
 
 ```yaml
 Type: String
