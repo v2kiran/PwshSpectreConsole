@@ -863,7 +863,22 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt;
+@{
+    Label = "Root"
+    Children = @(
+        @{
+            Label = "First Child"
+            Children = @(
+                @{ Label = "With"; Children = @() },
+                @{ Label = "Loads"; Children = @() },
+                @{ Label = "More"; Children = @() },
+                @{ Label = "Nested"; Children = @( @{ Label = "Children"; Children = @() } ) }
+            )
+        },
+        @{ Label = "Second Child"; Children = @() }
+    )
+} | Format-SpectreTree -color yellow</dev:code>
         <dev:remarks>
           <maml:para>{{ Add example description here }}</maml:para>
         </dev:remarks>
@@ -1213,11 +1228,11 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:verb>Invoke</command:verb>
       <command:noun>SpectreCommandWithStatus</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Show status using an animated spinner and markup text</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Show status using an animated spinner and markup text</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -1225,7 +1240,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>ScriptBlock</maml:name>
           <maml:description>
-            <maml:para>{{ Fill ScriptBlock Description }}</maml:para>
+            <maml:para>scriptblock which will include the data</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
           <dev:type>
@@ -1237,7 +1252,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Spinner</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Spinner Description }}</maml:para>
+            <maml:para>specify the spinner. https://spectreconsole.net/appendix/spinners</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1249,7 +1264,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>Title</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Title Description }}</maml:para>
+            <maml:para>Title for the status</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1261,7 +1276,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
           <maml:name>Color</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Color Description }}</maml:para>
+            <maml:para>color of the title</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -1276,7 +1291,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
         <maml:name>Color</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Color Description }}</maml:para>
+          <maml:para>color of the title</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1288,7 +1303,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>ScriptBlock</maml:name>
         <maml:description>
-          <maml:para>{{ Fill ScriptBlock Description }}</maml:para>
+          <maml:para>scriptblock which will include the data</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
         <dev:type>
@@ -1300,7 +1315,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Spinner</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Spinner Description }}</maml:para>
+          <maml:para>specify the spinner. https://spectreconsole.net/appendix/spinners</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -1312,7 +1327,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>Title</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Title Description }}</maml:para>
+          <maml:para>Title for the status</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1350,9 +1365,19 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt;
+Invoke-SpectreCommandWithStatus -Spinner Dots2 -Title "Showing a spinner..." -ScriptBlock {
+    # Write updates to the host using Write-SpectreHost
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Doing some work"
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Doing some more work"
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Done"
+    Start-Sleep -Seconds 1
+}</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -2784,11 +2809,11 @@ Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
       <command:verb>Write</command:verb>
       <command:noun>SpectreRule</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Write a horizontal line with some text to the console</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Write a horizontal line with some text to the console</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -2796,7 +2821,7 @@ Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Title</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Title Description }}</maml:para>
+            <maml:para>Title text</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2808,7 +2833,7 @@ Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Alignment</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Alignment Description }}</maml:para>
+            <maml:para>Alignment of the title</maml:para>
           </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Left</command:parameterValue>
@@ -2825,7 +2850,7 @@ Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>Color</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Color Description }}</maml:para>
+            <maml:para>Title color</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2840,7 +2865,7 @@ Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Alignment</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Alignment Description }}</maml:para>
+          <maml:para>Alignment of the title</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2852,7 +2877,7 @@ Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>Color</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Color Description }}</maml:para>
+          <maml:para>Title color</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2864,7 +2889,7 @@ Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Title</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Title Description }}</maml:para>
+          <maml:para>Title text</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2902,9 +2927,11 @@ Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Write-SpectreRule -Title "[purple]hello world[/]"
+PS C:\&gt; Write-SpectreRule -Title "hello world" -color purple
+PS C:\&gt; Write-SpectreRule -Title "hello world" -color purple -Border Ascii</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
