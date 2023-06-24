@@ -223,3 +223,16 @@ $Data | Get-Member -MemberType Properties | Foreach-Object {
 [Spectre.Console.AnsiConsole]::MarkupLine("[slowblink]Opening[/] shortly");
 [Spectre.Console.AnsiConsole]::MarkupLine("[rapidblink]Closing[/] shortly");
 [Spectre.Console.AnsiConsole]::MarkupLine("[link=https://github.com/SpicyCoder]Github[/] profile");
+
+
+
+Invoke-SpectreCommandWithStatus -Spinner Aesthetic -Title "Showing a spinner..." -ScriptBlock {
+    # Write updates tot the host using Write-SpectreHost
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Doing some work"
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Doing some more work"
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Done"
+    Start-Sleep -Seconds 1
+}

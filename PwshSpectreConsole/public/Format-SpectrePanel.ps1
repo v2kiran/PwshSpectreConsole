@@ -9,6 +9,10 @@
         [string]
         $Title,
 
+        [ValidateSet('Left','Right','Center')]
+        [string]
+        $Align = 'Center',
+
         #[ValidateSet('Ascii','Square','Rounded','Heavy','Double','None')]
 
         [ValidateSpectreBorder()]
@@ -28,6 +32,10 @@
     if ($Title)
     {
         $panel.Header = [Spectre.Console.PanelHeader]::new($Title)
+        if($Align)
+        {
+            $panel.Header.Justification = [Spectre.Console.Justify]::$Align
+        }
     }
     $panel.Expand = $Expand
     $panel.Border = [Spectre.Console.BoxBorder]::$Border

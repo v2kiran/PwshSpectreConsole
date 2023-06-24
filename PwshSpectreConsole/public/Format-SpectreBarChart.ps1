@@ -5,7 +5,7 @@
         $Data,
 
         $Title,
-        
+
         $Width = $Host.UI.RawUI.Width
     )
     begin {
@@ -16,7 +16,7 @@
         $barChart.Width = $Width
     }
     process {
-        $barChart = [Spectre.Console.BarChartExtensions]::AddItem($barChart, $Data.Label, $Data.Value, $Data.Color)
+        $barChart = [Spectre.Console.BarChartExtensions]::AddItem($barChart, $Data.Label, $Data.Value, [Spectre.Console.Color]::$($Data.Color))
     }
     end {
         [Spectre.Console.AnsiConsole]::Write($barChart)

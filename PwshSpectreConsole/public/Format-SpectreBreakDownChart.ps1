@@ -11,7 +11,7 @@
         $chart.Width = $Width
     }
     process {
-        $chart = [Spectre.Console.BreakdownChartExtensions]::AddItem($chart, $Data.Label, $Data.Value, $Data.Color)
+        $chart = [Spectre.Console.BreakdownChartExtensions]::AddItem($chart, $Data.Label, $Data.Value, [Spectre.Console.Color]::$($Data.Color))
     }
     end {
         [Spectre.Console.AnsiConsole]::Write($chart)
