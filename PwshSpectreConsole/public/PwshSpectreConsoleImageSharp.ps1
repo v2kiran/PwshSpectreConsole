@@ -1,17 +1,24 @@
 function Get-SpectreImageExperimental {
     param (
-        [string] $ImagePath,
-        [int] $MaxWidth,
-        [switch] $Repeat,
+        [string]
+        $ImagePath,
+
+        [int]
+        $MaxWidth,
+
+        [switch]
+        $Repeat,
+
         [ValidateSet("Bicubic", "NearestNeighbor")]
-        [string] $Resampler = "Bicubic"
+        [string]
+        $Resampler = "Bicubic"
     )
 
     $backgroundColor = [System.Drawing.Color]::FromName([Console]::BackgroundColor)
-    
+
     $image = [SixLabors.ImageSharp.Image]::Load($ImagePath)
     $scaledHeight = [int]($image.Height * ($MaxWidth / $image.Width))
-    
+
     if($image.Width -gt $MaxWidth) {
         [SixLabors.ImageSharp.Processing.ProcessingExtensions]::Mutate($image, {
             param($context)
