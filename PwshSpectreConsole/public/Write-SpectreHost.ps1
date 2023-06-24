@@ -1,5 +1,8 @@
 ﻿function Write-SpectreHost {
+    [cmdletbinding()]
     param (
+        # Parameter help description
+        [Parameter(Mandatory,Position=0,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [string]
         $Message,
 

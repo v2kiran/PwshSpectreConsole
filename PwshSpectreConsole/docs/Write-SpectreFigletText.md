@@ -8,7 +8,7 @@ schema: 2.0.0
 # Write-SpectreFigletText
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+write a figlet to the console
 
 ## SYNTAX
 
@@ -17,21 +17,23 @@ Write-SpectreFigletText [[-Text] <String>] [[-Alignment] <String>] [[-Color] <St
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+write a figlet to the console
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\>
+Write-SpectreFigletText "Pwsh + Spectre!" -Alignment Center -Color Aquamarine3
+"Pwsh + Spectre!" | Write-SpectreFigletText
 ```
 
-{{ Add example description here }}
+
 
 ## PARAMETERS
 
 ### -Alignment
-{{ Fill Alignment Description }}
+Alignment for the figlet
 
 ```yaml
 Type: String
@@ -47,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -Color
-{{ Fill Color Description }}
+Color of the figlet
 
 ```yaml
 Type: String
@@ -62,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Text
-{{ Fill Text Description }}
+Figlet text
 
 ```yaml
 Type: String

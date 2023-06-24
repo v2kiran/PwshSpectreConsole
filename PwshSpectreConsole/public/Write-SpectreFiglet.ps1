@@ -1,11 +1,13 @@
 ﻿function Write-SpectreFigletText {
+    [cmdletbinding()]
     param (
+        [Parameter(Mandatory,Position=0,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [string]
-        $Text = "Hello Spectre!",
+        $Text,
 
         [ValidateSet('Left','Right','Center')]
         [string]
-        $Alignment = "Left",
+        $Alignment = "Center",
 
         [ValidateSpectreColor()]
         [ArgumentCompletionsSpectreColors()]
@@ -13,12 +15,7 @@
         $Color = $script:AccentColor.ToString()
     )
     $figletText = [Spectre.Console.FigletText]::new($Text)
-    $figletText.Justification = switch($Alignment) {
-        "Left" { [Spectre.Console.Justify]::Left }
-        "Right" { [Spectre.Console.Justify]::Right }
-        "Centered" { [Spectre.Console.Justify]::Center }
-        default { Write-Error "Invalid alignment $Alignment" }
-    }
+    $figletText.Justification =  [Spectre.Console.Justify]::$Alignment
     $figletText.Color = [Spectre.Console.Color]::$Color
     [Spectre.Console.AnsiConsole]::Write($figletText)
 }
