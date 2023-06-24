@@ -2457,11 +2457,11 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:verb>Write</command:verb>
       <command:noun>SpectreFigletText</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>write a figlet to the console</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>write a figlet to the console</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -2469,7 +2469,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Text</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Text Description }}</maml:para>
+            <maml:para>Figlet text</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2481,7 +2481,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Alignment</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Alignment Description }}</maml:para>
+            <maml:para>Alignment for the figlet</maml:para>
           </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Left</command:parameterValue>
@@ -2498,7 +2498,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>Color</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Color Description }}</maml:para>
+            <maml:para>Color of the figlet</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2513,7 +2513,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Alignment</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Alignment Description }}</maml:para>
+          <maml:para>Alignment for the figlet</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2525,7 +2525,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>Color</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Color Description }}</maml:para>
+          <maml:para>Color of the figlet</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2537,7 +2537,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Text</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Text Description }}</maml:para>
+          <maml:para>Figlet text</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2575,9 +2575,11 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt;
+Write-SpectreFigletText "Pwsh + Spectre!" -Alignment Center -Color Aquamarine3
+"Pwsh + Spectre!" | Write-SpectreFigletText</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -2589,11 +2591,11 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:verb>Write</command:verb>
       <command:noun>SpectreHost</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Write a message to the console</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>Write a message to the console</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -2601,7 +2603,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Message</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Message Description }}</maml:para>
+            <maml:para>The message to tbe written to the console</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -2613,7 +2615,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>NoNewline</maml:name>
           <maml:description>
-            <maml:para>{{ Fill NoNewline Description }}</maml:para>
+            <maml:para>no newline</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -2627,7 +2629,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Message</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Message Description }}</maml:para>
+          <maml:para>The message to tbe written to the console</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -2639,7 +2641,7 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>NoNewline</maml:name>
         <maml:description>
-          <maml:para>{{ Fill NoNewline Description }}</maml:para>
+          <maml:para>no newline</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -2677,9 +2679,21 @@ $message | Format-SpectrePanel -Title "My Panel" -Border Double -Color Yellow1</
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt;
+Write-SpectreHost "[grey]LOG:[/] Doing some work"
+Write-SpectreHost "[dim]Dim[/] text"
+Write-SpectreHost "[bold]Bold[/] text"
+Write-SpectreHost "[italic]Italic[/] text"
+Write-SpectreHost "[underline]Underline[/] text"
+Write-SpectreHost "[red on blue]Colored[/] text"
+Write-SpectreHost "[invert red on blue]Inverted[/] text"
+Write-SpectreHost "[conceal]Hidden[/] text"
+Write-SpectreHost "[slowblink]Opening[/] shortly"
+Write-SpectreHost "[rapidblink]Closing[/] shortly"
+Write-SpectreHost "[link=https://github.com/SpicyCoder]Github[/] profile"
+"[blue]something[/]" | Write-SpectreHost</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>the message format is as follows "[color]message[/]"</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

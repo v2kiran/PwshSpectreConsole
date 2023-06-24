@@ -1,4 +1,5 @@
 ﻿function Write-SpectreFigletText {
+    [Alias('figlet')]
     [cmdletbinding()]
     param (
         [Parameter(Mandatory,Position=0,ValueFromPipeline,ValueFromPipelineByPropertyName)]

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Write-SpectreRule
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Write a horizontal line with some text to the console
 
 ## SYNTAX
 
@@ -17,21 +17,26 @@ Write-SpectreRule [[-Title] <String>] [[-Alignment] <String>] [[-Color] <String>
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Write a horizontal line with some text to the console
+
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Write-SpectreRule -Title "[purple]hello world[/]"
+PS C:\> Write-SpectreRule -Title "hello world" -color purple
+PS C:\> Write-SpectreRule -Title "hello world" -color purple -Border Ascii
+
+
 ```
 
-{{ Add example description here }}
+
 
 ## PARAMETERS
 
 ### -Alignment
-{{ Fill Alignment Description }}
+Alignment of the title
 
 ```yaml
 Type: String
@@ -47,7 +52,7 @@ Accept wildcard characters: False
 ```
 
 ### -Color
-{{ Fill Color Description }}
+Title color
 
 ```yaml
 Type: String
@@ -62,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-{{ Fill Title Description }}
+Title text
 
 ```yaml
 Type: String

@@ -1,11 +1,13 @@
 ﻿function Format-SpectrePanel
 {
+    [Alias('sppanel')]
     [CmdletBinding()]
     param (
-        [Parameter(ValueFromPipeline)]
+        [Parameter(Mandatory,Position=0, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [string]
         $Data,
 
+        [Parameter(Position=1, ValueFromPipelineByPropertyName)]
         [string]
         $Title,
 

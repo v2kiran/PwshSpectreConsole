@@ -1,7 +1,8 @@
 ﻿function Format-SpectreTable {
-    # TODO fix this to be not crap and use a formatter or something
+    [Alias('sptable')]
+    [cmdletbinding()]
     param (
-        [Parameter(ValueFromPipeline)]
+        [Parameter(Mandatory,Position=0, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [array] $Data,
 
         [ValidateSpectreBorder()]

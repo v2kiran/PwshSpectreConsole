@@ -1,6 +1,8 @@
 ﻿function Format-SpectreBreakdownChart {
+    [Alias('spbkchart')]
+    [cmdletbinding()]
     param (
-        [Parameter(ValueFromPipeline)]
+        [Parameter(Mandatory,Position=0, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [array]
         $Data,
 

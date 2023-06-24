@@ -1,6 +1,10 @@
 ﻿function Invoke-SpectreCommandWithProgress {
+    [Alias('spprogress')]
+    [cmdletbinding()]
     param (
-        [scriptblock] $ScriptBlock
+        [Parameter(Mandatory,Position=0, ValueFromPipelineByPropertyName, ValueFromPipeline)]
+        [scriptblock]
+        $ScriptBlock
     )
     [Spectre.Console.AnsiConsole]::Progress().Start({
         param (

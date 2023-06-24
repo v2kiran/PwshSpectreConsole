@@ -1,9 +1,13 @@
 ﻿function Format-SpectreBarChart {
+    [Alias('spbarchart')]
+    [cmdletbinding()]
     param (
-        [Parameter(ValueFromPipeline)]
+        [Parameter(Mandatory,Position=0, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [array]
         $Data,
 
+        [Parameter(Position=1, ValueFromPipelineByPropertyName)]
+        [string]
         $Title,
 
         $Width = $Host.UI.RawUI.Width

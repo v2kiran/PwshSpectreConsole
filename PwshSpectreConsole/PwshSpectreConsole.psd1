@@ -36,7 +36,7 @@
     )
     CmdletsToExport    = @()
     VariablesToExport  = '*'
-    AliasesToExport    = @()
+    AliasesToExport    = '*'
     PrivateData        = @{
         PSData = @{
             Tags       = @('Windows', 'Linux')

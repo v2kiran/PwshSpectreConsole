@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-SpectreCommandWithStatus
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Show status using an animated spinner and markup text
 
 ## SYNTAX
 
@@ -18,21 +18,30 @@ Invoke-SpectreCommandWithStatus [[-ScriptBlock] <ScriptBlock>] [[-Spinner] <Obje
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Show status using an animated spinner and markup text
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\>
+Invoke-SpectreCommandWithStatus -Spinner Dots2 -Title "Showing a spinner..." -ScriptBlock {
+    # Write updates to the host using Write-SpectreHost
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Doing some work"
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Doing some more work"
+    Start-Sleep -Seconds 1
+    Write-SpectreHost "[grey]LOG:[/] Done"
+    Start-Sleep -Seconds 1
+}
 ```
 
-{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Color
-{{ Fill Color Description }}
+color of the title
 
 ```yaml
 Type: String
@@ -47,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
-{{ Fill ScriptBlock Description }}
+scriptblock which will include the data
 
 ```yaml
 Type: ScriptBlock
@@ -62,7 +71,8 @@ Accept wildcard characters: False
 ```
 
 ### -Spinner
-{{ Fill Spinner Description }}
+specify the spinner.
+https://spectreconsole.net/appendix/spinners
 
 ```yaml
 Type: Object
@@ -77,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-{{ Fill Title Description }}
+Title for the status
 
 ```yaml
 Type: String

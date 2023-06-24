@@ -1,13 +1,15 @@
 ﻿function Format-SpectreTree {
+    [Alias('sptree')]
+    [cmdletbinding()]
     param (
-        [Parameter(ValueFromPipeline)]
+        [Parameter(Mandatory,Position=0, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [hashtable]
         $Data,
 
-        [ValidateSpectreBorder()]
+<#         [ValidateSpectreBorder()]
         [ArgumentCompletionsSpectreBorders()]
         [string]
-        $Border = "Rounded",
+        $Border = "Rounded", #>
 
         [ValidateSpectreColor()]
         [ArgumentCompletionsSpectreColors()]

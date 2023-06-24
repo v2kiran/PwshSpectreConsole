@@ -1,5 +1,8 @@
 ﻿function Invoke-SpectreCommandWithStatus {
+    [Alias('spstatus')]
+    [cmdletbinding()]
     param (
+        [Parameter(Mandatory,Position=0, ValueFromPipelineByPropertyName, ValueFromPipeline)]
         [scriptblock]
         $ScriptBlock,
 
