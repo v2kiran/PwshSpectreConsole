@@ -23,7 +23,22 @@ Format-SpectreTree [[-Data] <Hashtable>] [[-Border] <String>] [[-Color] <String>
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\>
+@{
+    Label = "Root"
+    Children = @(
+        @{
+            Label = "First Child"
+            Children = @(
+                @{ Label = "With"; Children = @() },
+                @{ Label = "Loads"; Children = @() },
+                @{ Label = "More"; Children = @() },
+                @{ Label = "Nested"; Children = @( @{ Label = "Children"; Children = @() } ) }
+            )
+        },
+        @{ Label = "Second Child"; Children = @() }
+    )
+} | Format-SpectreTree -color yellow
 ```
 
 {{ Add example description here }}

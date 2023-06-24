@@ -11,10 +11,11 @@
         [string]
         $Border = "Rounded", #>
 
+        [Parameter(Position=1, ValueFromPipelineByPropertyName)]
         [ValidateSpectreColor()]
         [ArgumentCompletionsSpectreColors()]
         [string]
-        $Color = $script:AccentColor.ToString()
+        $Color = 'Cornsilk1'
     )
 
     function Add-SpectreTreeNode {
