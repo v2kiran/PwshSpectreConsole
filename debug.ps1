@@ -40,3 +40,6 @@ Invoke-SpectreCommandWithStatus -Spinner Aesthetic -Title 'Showing a spinner...'
 :telephone_receiver:
 
 #>
+
+
+"$($PSStyle.Foreground.FromRgb(145,145,145))Log: $($PSStyle.reset) My text is here yes"
