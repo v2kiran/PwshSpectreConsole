@@ -8,33 +8,9 @@
     PowerShellVersion  = '7.0'
     RootModule         = 'PwshSpectreConsole'
     # Assemblies that must be loaded prior to importing this module
-    RequiredAssemblies = 'lib\Spectre.Console.dll','lib\SixLabors.ImageSharp.dll','lib\Spectre.Console.ImageSharp.dll'
-    FunctionsToExport  = @(
-        'Add-SpectreJob',
-        'Format-SpectreBarChart',
-        'Format-SpectreBreakdownChart',
-        'Format-SpectrePanel',
-        'Format-SpectreTable',
-        'Format-SpectreTree',
-        'Get-SpectreImage',
-        'Get-SpectreImageExperimental',
-        'Invoke-SpectreCommandWithProgress',
-        'Invoke-SpectreCommandWithStatus',
-        'Invoke-SpectrePromptAsync',
-        'Read-SpectreMultiSelection',
-        'Read-SpectreMultiSelectionGrouped',
-        'Read-SpectrePause',
-        'Read-SpectreSelection',
-        'Read-SpectreText',
-        'Set-SpectreColors',
-        'Start-SpectreDemo',
-        'Wait-SpectreJobs',
-        'Write-SpectreFigletText',
-        'Write-SpectreHost',
-        'Write-SpectreParagraph',
-        'Write-SpectreRule'
-    )
-    CmdletsToExport    = @()
+    RequiredAssemblies = 'lib\Spectre.Console.dll','lib\SixLabors.ImageSharp.dll','lib\Spectre.Console.ImageSharp.dll','lib\Posh.Spectre.Console.dll'
+    FunctionsToExport  = '*'
+    CmdletsToExport    = '*'
     VariablesToExport  = '*'
     AliasesToExport    = '*'
     PrivateData        = @{

@@ -8,12 +8,12 @@
         [ValidateSpectreBorder()]
         [ArgumentCompletionsSpectreBorders()]
         [string]
-        $Border = "Double",
+        $Border = "MinimalHeavyHead",
 
         [ValidateSpectreColor()]
         [ArgumentCompletionsSpectreColors()]
         [string]
-        $Color = $script:AccentColor.ToString()
+        $Color = 'Yellow'
     )
     begin {
         $table = [Spectre.Console.Table]::new()

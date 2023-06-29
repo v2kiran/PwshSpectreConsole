@@ -1,4 +1,5 @@
 using module "private/Attributes.psm1"
+using namespace Spectre.Console
 
 $script:AccentColor = [Spectre.Console.Color]::Blue
 $script:DefaultValueColor = [Spectre.Console.Color]::Grey
